@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { getCharacters } from '../../services/getCharacters';
 import Header from '../header/Header';
 import Loading from '../loading/Loading';
 import CharacterList from '../characters/CharacterList';
@@ -21,21 +20,11 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true);
-
     searchCharacters(currentPage, searchTerm)
       .then(res => {
-
-        console.log('RES:');
-        console.log(res);
         setCharacters(res);
         setLoading(false);
       });
-
-    // getCharacters(currentPage)
-    //   .then(res => {
-    //     setCharacters(res);
-    //     setLoading(false);
-    //   });
   }, [currentPage, searchTerm]);
 
   return (
