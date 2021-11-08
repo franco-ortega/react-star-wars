@@ -32,6 +32,7 @@ const App = () => {
       <SearchName
         setSearchTerm={setSearchTerm}
         setCurrentPage={setCurrentPage}
+        searchTerm={searchTerm}
       />
       {characters.count > 0 &&
       <PageList

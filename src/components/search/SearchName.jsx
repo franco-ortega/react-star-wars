@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SearchName.module.css';
 
-const SearchName = ({ setSearchTerm, setCurrentPage }) => {
+const SearchName = ({ setSearchTerm, setCurrentPage, searchTerm }) => {
 
   const [searchName, setSearchName] = useState('');
 
@@ -33,13 +34,18 @@ const SearchName = ({ setSearchTerm, setCurrentPage }) => {
           onChange={onSearchNameChange}
         />
       </label>
-      <button disabled={!searchName}>Search</button>
-      <button type="button" onClick={onResetClick}>Reset</button>
+      <button type="submit" disabled={!searchName}>Search</button>
+      <button
+        type="button"
+        disabled={!searchTerm}
+        onClick={onResetClick}
+      >Reset</button>
     </form>
   );
 };
 
 SearchName.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
   setSearchTerm: PropTypes.func.isRequired,
   setCurrentPage: PropTypes.func.isRequired
 };
