@@ -1,25 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const SearchName = ({ searchName, setSearchName }) => {
+const SearchName = ({ setSearchTerm }) => {
+
+  const [searchName, setSearchName] = useState('');
 
   const onSearchNameChange = ({ target }) => {
     setSearchName(target.value);
   };
 
   const onSearchNameSubmit = (e) => {
-    console.log({ searchName });
     e.preventDefault();
-    setSearchName('');
+    setSearchTerm(searchName);
   };
-
-  // console.log({ searchName });
 
   return (
     <form onSubmit={onSearchNameSubmit}>
       <label htmlFor="name">
         <input
-          required
           id="name"
           type="text"
           placeholder="Search by name"
@@ -34,8 +32,10 @@ const SearchName = ({ searchName, setSearchName }) => {
 };
 
 SearchName.propTypes = {
-  searchName: PropTypes.string.isRequired,
-  setSearchName: PropTypes.func.isRequired
+  currentPage: PropTypes.number.isRequired,
+  setCharacters: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
+  setSearchTerm: PropTypes.func.isRequired
 };
 
 export default SearchName;

@@ -6,9 +6,11 @@ import CharacterList from '../characters/CharacterList';
 import Averages from '../averages/Averages';
 import PageList from '../pages/PageList';
 import SearchName from '../search/SearchName';
+import { searchCharacters } from '../../services/searchCharacters';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [characters, setCharacters] = useState({
     count: 0,
@@ -16,24 +18,28 @@ const App = () => {
     next: '',
     characters: []
   });
-  const [searchName, setSearchName] = useState('');
 
   useEffect(() => {
     setLoading(true);
 
-    getCharacters(currentPage)
+    searchCharacters(searchTerm, currentPage)
       .then(res => {
         setCharacters(res);
         setLoading(false);
       });
-  }, [currentPage]);
+
+    // getCharacters(currentPage)
+    //   .then(res => {
+    //     setCharacters(res);
+    //     setLoading(false);
+    //   });
+  }, [currentPage, searchTerm]);
 
   return (
     <div data-testid="app">
       <Header />
       <SearchName
-        searchName={searchName}
-        setSearchName={setSearchName}
+        setSearchTerm={setSearchTerm}
       />
       {loading && <Loading />}
       {characters.count && !loading &&
