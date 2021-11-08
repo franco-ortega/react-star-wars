@@ -1,10 +1,12 @@
 import Character from './Character';
 import PropTypes from 'prop-types';
+import styles from './CharacterList.module.css';
 
 const CharacterList = ({ characters }) => {
   const charactersToDisplay = characters.map((character, index) => (
     <Character
       key={index}
+      hue={index * 75}
       name={character.name}
       gender={character.gender}
       hairColor={character.hairColor}
@@ -14,7 +16,7 @@ const CharacterList = ({ characters }) => {
   ));
 
   return (
-    <ul>
+    <ul className={styles.CharacterList}>
       {charactersToDisplay}
     </ul>
   );

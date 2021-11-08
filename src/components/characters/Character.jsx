@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './Character.module.css';
 
 const Character = ({
+  hue,
   name,
   gender,
   hairColor,
@@ -9,7 +10,7 @@ const Character = ({
   height
 }) => {
   return (
-    <li className={styles.Character}>
+    <li className={styles.Character} style={{ background: `hsl(${hue}, 50%, 40%)` }}>
       <h3>{name}</h3>
       <p>Gender: {gender}</p>
       <p>Hair Color: {hairColor}</p>
@@ -20,6 +21,7 @@ const Character = ({
 };
 
 Character.propTypes = {
+  hue: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   gender: PropTypes.string.isRequired,
   hairColor: PropTypes.string.isRequired,
