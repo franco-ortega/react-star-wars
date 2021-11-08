@@ -1,9 +1,9 @@
-import React from 'react';
+import styles from './Header.module.css';
 
 const Header = () => {
   return (
-    <header>
-      <h1>STAR WARS Characters</h1>
+    <header className={styles.Header}>
+      <h1>STAR WARS <br /> Characters</h1>
     </header>
   );
 };
