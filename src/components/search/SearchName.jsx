@@ -12,15 +12,14 @@ const SearchName = ({ setSearchTerm, setCharacters, setCurrentPage }) => {
 
   const onSearchNameSubmit = (e) => {
     e.preventDefault();
-    setCharacters({
-      count: 0,
-      previous: '',
-      next: '',
-      characters: []
-    });
     setCurrentPage(1);
     setSearchTerm(searchName);
   };
+
+  const onResetClick = () => {
+    setSearchTerm('');
+  };
+  
 
   return (
     <form className={styles.SearchName} onSubmit={onSearchNameSubmit}>
@@ -34,7 +33,7 @@ const SearchName = ({ setSearchTerm, setCharacters, setCurrentPage }) => {
         />
       </label>
       <button disabled={!searchName}>Search</button>
-      {/* <button>Reset</button> */}
+      <button type="button" onClick={onResetClick}>Reset</button>
     </form>
   );
 };
