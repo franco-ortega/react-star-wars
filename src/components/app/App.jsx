@@ -34,6 +34,7 @@ const App = () => {
       <>
         <PageList
           totalPages={characters.totalPages()}
+          currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />
         <CharacterList characters={characters.characters} />
