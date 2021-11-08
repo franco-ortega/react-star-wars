@@ -7,6 +7,8 @@ describe('SearchName component tests', () => {
     render(
       <SearchName
       setSearchTerm={() => {}}
+      setCharacters={() => {}}
+      setCurrentPage={() => {}}
       />
     );
 
@@ -21,6 +23,8 @@ describe('SearchName component tests', () => {
     render(
       <SearchName
         setSearchTerm={setSearchTerm}
+        setCharacters={() => {}}
+        setCurrentPage={() => {}}
       />
     );
 

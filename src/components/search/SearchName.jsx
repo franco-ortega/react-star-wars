@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SearchName.module.css';
 
-const SearchName = ({ setSearchTerm }) => {
+const SearchName = ({ setSearchTerm, setCharacters, setCurrentPage }) => {
 
   const [searchName, setSearchName] = useState('');
 
@@ -12,6 +12,13 @@ const SearchName = ({ setSearchTerm }) => {
 
   const onSearchNameSubmit = (e) => {
     e.preventDefault();
+    setCharacters({
+      count: 0,
+      previous: '',
+      next: '',
+      characters: []
+    });
+    setCurrentPage(1);
     setSearchTerm(searchName);
   };
 
@@ -33,7 +40,9 @@ const SearchName = ({ setSearchTerm }) => {
 };
 
 SearchName.propTypes = {
-  setSearchTerm: PropTypes.func.isRequired
+  setSearchTerm: PropTypes.func.isRequired,
+  setCharacters: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired
 };
 
 export default SearchName;
