@@ -7,6 +7,7 @@ describe('Character componenet test', () => {
     render(
       <Character
         key={1}
+        hue={75}
         name={'Luke Skywalker'}
         gender={'male'}
         hairColor={'blonde'}
