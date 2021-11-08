@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from '../header/Header';
 
 const App = () => {
   return (
     <div data-testid="app">
-      <h2>Coming soon...</h2>
+      <Header />
     </div>
   );
 };
