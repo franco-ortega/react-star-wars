@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Character from './Character';
 
-
 describe('Character componenet test', () => {
   it('renders a character', () => {
     render(
