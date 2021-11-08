@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getCharacters } from '../../services/getCharacters';
 import Header from '../header/Header';
 import Loading from '../loading/Loading';
 
