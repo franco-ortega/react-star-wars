@@ -5,6 +5,7 @@ import Loading from '../loading/Loading';
 import CharacterList from '../characters/CharacterList';
 import Averages from '../averages/Averages';
 import PageList from '../pages/PageList';
+import SearchName from '../search/SearchName';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -15,6 +16,7 @@ const App = () => {
     next: '',
     characters: []
   });
+  const [searchName, setSearchName] = useState('');
 
   useEffect(() => {
     setLoading(true);
@@ -29,6 +31,10 @@ const App = () => {
   return (
     <div data-testid="app">
       <Header />
+      <SearchName
+        searchName={searchName}
+        setSearchName={setSearchName}
+      />
       {loading && <Loading />}
       {characters.count && !loading &&
       <>

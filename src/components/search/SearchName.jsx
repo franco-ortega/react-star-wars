@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 
 const SearchName = ({ searchName, setSearchName }) => {
 
-  // const onSearchNameChange = ({ target }) => {
-  //   console.log('search inputted');
-  //   setSearchName(target.value);
-  // };
+  const onSearchNameChange = ({ target }) => {
+    setSearchName(target.value);
+  };
 
   const onSearchNameSubmit = (e) => {
+    console.log({ searchName });
     e.preventDefault();
-    console.log('search submitted');
-    setSearchName(e.target.value);
+    setSearchName('');
   };
+
+  // console.log({ searchName });
 
   return (
     <form onSubmit={onSearchNameSubmit}>
@@ -23,7 +24,7 @@ const SearchName = ({ searchName, setSearchName }) => {
           type="text"
           placeholder="Search by name"
           value={searchName}
-          // onChange={onSearchNameChange}
+          onChange={onSearchNameChange}
         />
       </label>
       <button>Search</button>
@@ -34,7 +35,7 @@ const SearchName = ({ searchName, setSearchName }) => {
 
 SearchName.propTypes = {
   searchName: PropTypes.string.isRequired,
-  setSearchName: PropTypes.string.isRequired
+  setSearchName: PropTypes.func.isRequired
 };
 
 export default SearchName;
