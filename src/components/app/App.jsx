@@ -14,8 +14,6 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [characters, setCharacters] = useState({
     count: 0,
-    previous: '',
-    next: '',
     characters: []
   });
 

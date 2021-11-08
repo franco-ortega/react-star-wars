@@ -6,8 +6,6 @@ export const getCharacters = async(currentPage) => {
     .then(res => {
       return new CharacterList({
         count: res.count,
-        next: res.next,
-        previous: res.previous,
         results: res.results
       });
     });

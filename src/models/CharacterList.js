@@ -1,9 +1,7 @@
 export class CharacterList {
 
-  constructor({ count, next, previous, results }) {
+  constructor({ count, results }) {
     this.count = count;
-    this.next = next;
-    this.previous = previous;
     this.characters = results
       .map(character => {
         return {
