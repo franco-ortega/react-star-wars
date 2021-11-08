@@ -33,7 +33,7 @@ const SearchName = ({ setSearchTerm, setCharacters, setCurrentPage }) => {
           onChange={onSearchNameChange}
         />
       </label>
-      <button>Search</button>
+      <button disabled={!searchName}>Search</button>
       {/* <button>Reset</button> */}
     </form>
   );
