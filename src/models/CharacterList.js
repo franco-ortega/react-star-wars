@@ -40,9 +40,7 @@ export class CharacterList {
         const commaRemoved = cur.split(',').join('');
 
         // If the value converted to a number is not NaN, add it to the total
-        if(!isNaN(Number(commaRemoved))) {
-          return acc + Number(commaRemoved);
-        }
+        if(!isNaN(Number(commaRemoved))) return acc + Number(commaRemoved);
 
         // Otherwise, decrement totalCharacters and return previous total
         totalCharacters--;
