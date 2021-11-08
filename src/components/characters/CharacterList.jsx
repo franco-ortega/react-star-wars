@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './CharacterList.module.css';
 
 const CharacterList = ({ characters }) => {
+
   const charactersToDisplay = characters.map((character, index) => (
     <Character
       key={index}
