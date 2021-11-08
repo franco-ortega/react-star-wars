@@ -6,6 +6,7 @@ import Averages from '../averages/Averages';
 import PageList from '../pages/PageList';
 import SearchName from '../search/SearchName';
 import { searchCharacters } from '../../services/searchCharacters';
+import NoResults from '../characters/NoResults';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -34,7 +35,7 @@ const App = () => {
         setSearchTerm={setSearchTerm}
         setCurrentPage={setCurrentPage}
       />
-      {characters.count &&
+      {characters.count > 0 &&
       <PageList
         totalPages={characters.totalPages()}
         currentPage={currentPage}
@@ -42,14 +43,16 @@ const App = () => {
       />
       }
       {loading && <Loading />}
-      {characters.count && !loading &&
-      <>
-        <CharacterList characters={characters.characters} />
-        <Averages
-          height={characters.averageHeight()}
-          mass={characters.averageMass()}
-        />
-      </>
+      {/* {!characters.characters && !loading && 'No results found.'} */}
+      {characters.count && !loading ?
+        <>
+          <CharacterList characters={characters.characters} />
+          <Averages
+            height={characters.averageHeight()}
+            mass={characters.averageMass()}
+          />
+        </>
+        : !loading && <NoResults />
       }
     </div>
   );

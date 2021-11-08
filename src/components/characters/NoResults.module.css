@@ -1,0 +1,8 @@
+.NoResults {
+  width: fit-content;
+  margin: auto;
+  margin-top: 2rem;
+
+  color: yellow;
+  font-size: 2rem;
+}
