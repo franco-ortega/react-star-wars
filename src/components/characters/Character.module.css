@@ -10,3 +10,9 @@
 .Character p {
   margin-top: 0.25rem;
 }
+
+@media screen and (min-width: 500px) {
+  .Character {
+    width: 25ch;
+  }
+}
