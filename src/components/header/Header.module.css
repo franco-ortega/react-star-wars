@@ -2,5 +2,18 @@
   color: yellow;
   font-size: 1.5rem;
   text-align: center;
-  margin-top: 2rem;
+  margin: auto;
+  margin-top: 1rem;
+
+  font-family: 'Star Jedi', sans-serif;
+}
+
+@font-face {
+  font-family: 'Star Jedi';
+  src: url(../../fonts/star_jedi/starjedi/Starjedi.ttf);
+}
+
+@font-face {
+  font-family: 'Star Hollow';
+  src: url(../../fonts/star_jedi/starjedi/Starjhol.ttf);
 }
