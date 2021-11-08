@@ -61,7 +61,7 @@ export class CharacterList {
   averageHeight() {
     let totalCharacters = this.characters.length;
 
-    return this.characters.reduce((acc, cur) => {
+    const average = this.characters.reduce((acc, cur) => {
       if(isNaN(Number(cur.height))) {
         totalCharacters--;
         return acc;
@@ -69,6 +69,13 @@ export class CharacterList {
 
       return acc + Number(cur.height);
     }, 0) / totalCharacters;
+
+    if(String(average).includes('.')) {
+      // If the decimal is longer than 2 decimal places, return only 2 decimal places
+      if(String(average).split('.')[1].length > 2) return Number(average.toFixed(2));
+    }
+
+    return average;
   }
 
   totalPages() {
