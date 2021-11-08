@@ -51,9 +51,10 @@ export class CharacterList {
       return acc + Number(cur.mass);
     }, 0) / totalCharacters;
 
-    // If there is a decimal place longer than 2 digits, only return 2 digits
-    if(String(average).split('.')[1]) {
-      if(String(average).split('.')[1].length > 2) return average.toFixed(2);
+    // Check if there is a decimal
+    if(String(average).includes('.')) {
+      // If the decimal is longer than 2 decimal places, return only 2 decimal places
+      if(String(average).split('.')[1].length > 2) return Number(average.toFixed(2));
     }
 
     return average;
