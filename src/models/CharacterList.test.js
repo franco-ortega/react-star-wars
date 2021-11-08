@@ -33,4 +33,13 @@ describe('tests for CharacterList class', () => {
     expect(result).toEqual(expectedAverageHeight);
   });
 
+  it('calculates total pages with 10 characters per page', () => {
+
+    const characterList = new CharacterList(mockApiData);
+    const result = characterList.totalPages();
+
+    const expectedTotalPages = Math.ceil(mockApiData.count / 10);
+
+    expect(result).toEqual(expectedTotalPages);
+  });
 });
