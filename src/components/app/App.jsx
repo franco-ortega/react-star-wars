@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { searchCharacters } from '../../services/searchCharacters';
 import Header from '../header/Header';
+import SearchName from '../search/SearchName';
+import PageList from '../pages/PageList';
 import Loading from '../loading/Loading';
 import CharacterList from '../characters/CharacterList';
 import Averages from '../averages/Averages';
-import PageList from '../pages/PageList';
-import SearchName from '../search/SearchName';
-import { searchCharacters } from '../../services/searchCharacters';
 import NoResults from '../characters/NoResults';
 
 const App = () => {
