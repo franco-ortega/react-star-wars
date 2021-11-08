@@ -3,6 +3,7 @@ import { getCharacters } from '../../services/getCharacters';
 import Header from '../header/Header';
 import Loading from '../loading/Loading';
 import CharacterList from '../characters/CharacterList';
+import Averages from '../averages/Averages';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -23,13 +24,19 @@ const App = () => {
       });
   }, []);
 
-  console.log(characters);
-
   return (
     <div data-testid="app">
       <Header />
       {loading && <Loading />}
-      <CharacterList characters={characters.characters} />
+      {characters.count &&
+      <>
+        <CharacterList characters={characters.characters} />
+        <Averages
+          height={characters.averageHeight()}
+          mass={characters.averageMass()}
+        />
+      </>
+      }
     </div>
   );
 };
