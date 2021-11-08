@@ -14,33 +14,3 @@ body {
   font-family: 'Star Jedi';
   src: url(./fonts/star_jedi/starjedi/Starjedi.ttf);
 }
-
-@font-face {
-  font-family: 'Star Hollow';
-  src: url(./fonts/star_jedi/starjedi/Starjhol.ttf);
-}
-
-@font-face {
-  font-family: 'Star Jedi Outline';
-  src: url(./fonts/star_jedi/starjout/Starjout.ttf);
-}
-
-@font-face {
-  font-family: 'Star Jedi Special';
-  src: url(./fonts/star_jedi/stjedise/STJEDISE.TTF);
-}
-
-@font-face {
-  font-family: 'Star Jedi Logo 1';
-  src: url(./fonts/star_jedi/stjelogo/Stjldbl1.ttf);
-}
-
-@font-face {
-  font-family: 'Star Jedi Logo 2';
-  src: url(./fonts/star_jedi/stjelogo/Stjldbl2.ttf);
-}
-
-@font-face {
-  font-family: 'Star Jedi Logo Mono';
-  src: url(./fonts/star_jedi/stjelogo/Strjmono.ttf);
-}
