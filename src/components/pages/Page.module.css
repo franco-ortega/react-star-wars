@@ -1,5 +1,13 @@
 .Page {
+  background: black;
   border: thin solid yellow;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.3rem;
   color: yellow;
-  font-size: 1rem;
+  font-size: 1.25rem;
+}
+
+.Current {
+  background: yellow;
+  color: black;
 }

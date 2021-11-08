@@ -1,4 +1,3 @@
-import React from 'react';
 import Page from './Page';
 import PropTypes from 'prop-types';
 import styles from './PageList.module.css';
@@ -9,7 +8,12 @@ const PageList = ({ totalPages, currentPage, setCurrentPage }) => {
 
   for(let i = 0; i < totalPages; i++) {
     pagesToDisplay.push(
-      <Page key={i} pageNumber={i + 1} setCurrentPage={setCurrentPage} />
+      <Page
+        key={i}
+        pageNumber={i + 1}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     );
   }
 
