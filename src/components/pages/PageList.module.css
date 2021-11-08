@@ -23,7 +23,14 @@
   padding: 0.25rem 0;
   width: 5rem;
   font-size: 1rem;
+
+  background: black;
+  border-color: yellow;
+  color: yellow;
 }
 
 .PageList p > button:disabled {
+  background: hsl(0, 0%, 0%);
+  border-color: hsl(60, 100%, 50%, 0.5);
+  color: hsl(60, 100%, 50%, 0.5);
 }
