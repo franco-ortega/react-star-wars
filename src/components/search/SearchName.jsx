@@ -19,6 +19,7 @@ const SearchName = ({ setSearchTerm, setCurrentPage }) => {
   const onResetClick = () => {
     setSearchName('');
     setSearchTerm('');
+    setCurrentPage(1);
   };
 
   return (

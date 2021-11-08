@@ -42,17 +42,17 @@ const App = () => {
         setCurrentPage={setCurrentPage}
       />
       }
-      {loading && <Loading />}
-      {/* {!characters.characters && !loading && 'No results found.'} */}
-      {characters.count && !loading ?
-        <>
-          <CharacterList characters={characters.characters} />
-          <Averages
-            height={characters.averageHeight()}
-            mass={characters.averageMass()}
-          />
-        </>
-        : !loading && <NoResults />
+      {loading 
+        ? <Loading />
+        : characters.count 
+          ? <>
+            <CharacterList characters={characters.characters} />
+            <Averages
+              height={characters.averageHeight()}
+              mass={characters.averageMass()}
+            />
+          </>
+          : <NoResults />
       }
     </div>
   );
