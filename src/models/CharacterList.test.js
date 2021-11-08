@@ -1,4 +1,5 @@
 import mockApiData from '../mocks/mockApiData.json';
+import { CharacterList } from './CharacterList';
 
 describe('tests for CharacterList class', () => {
   it('calculates average mass of characters on current page', () => {
