@@ -34,7 +34,7 @@ const SearchName = ({ setSearchTerm, setCurrentPage, searchTerm }) => {
           onChange={onSearchNameChange}
         />
       </label>
-      <button type="submit" disabled={!searchName}>Search</button>
+      <button type="submit">Search</button>
       <button
         type="button"
         disabled={!searchTerm}
