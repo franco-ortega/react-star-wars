@@ -1,0 +1,11 @@
+.Averages {
+  border: thin solid yellow;
+  border-radius: 0.5rem;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  color: yellow;
+  font-size: 2rem;
+  text-align: center;
+}

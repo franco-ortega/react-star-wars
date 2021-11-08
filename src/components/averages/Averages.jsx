@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Averages.module.css';
 
 const Averages = ({ height, mass }) => {
   return (
-    <div>
+    <div className={styles.Averages}>
       <p>Average Height: {height}</p>
       <p>Average Mass: {mass}</p>
     </div>
