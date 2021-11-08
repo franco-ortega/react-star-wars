@@ -11,9 +11,10 @@ const Character = ({
 }) => {
   const bkgdGradient = {
     background: `linear-gradient(
-      ${hue}deg,
+      90deg,
       hsl(${hue}, 50%, 20%),
       hsl(${hue}, 70%, 30%),
+      hsl(${hue}, 70%, 50%),
       hsl(${hue}, 90%, 40%)
     )`
   };
