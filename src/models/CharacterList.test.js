@@ -17,10 +17,10 @@ describe('tests for CharacterList class', () => {
     expect(result).toEqual(expectedAverageMass);
   });
 
-  it('calculates average mass of characters on current page', () => {
+  it('calculates average height of characters on current page', () => {
 
     const characterList = new CharacterList(mockApiData);
-    const result = characterList.averageMass();
+    const result = characterList.averageHeight();
 
     const expectedHeights = mockApiData.results.map(character => {
       return character.height;
