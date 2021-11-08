@@ -1,0 +1,29 @@
+.PageList {
+  /* display: flex;
+  justify-content: space-evenly;
+  gap: 1rem; */
+
+  margin: 1rem auto;
+  width: fit-content;
+  text-align: center;
+
+  /* border: thin solid white; */
+}
+
+.PageList ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.PageList p > button {
+  background: lightgray;
+  border-radius: 0.25rem;
+  margin: 1rem 0.5rem;
+  padding: 0.25rem 0;
+  width: 5rem;
+  font-size: 1rem;
+}
+
+.PageList p > button:disabled {
+}
