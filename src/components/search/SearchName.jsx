@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import styles from './SearchName.module.css';
 
 const SearchName = ({ setSearchTerm }) => {
 
@@ -15,7 +16,7 @@ const SearchName = ({ setSearchTerm }) => {
   };
 
   return (
-    <form onSubmit={onSearchNameSubmit}>
+    <form className={styles.SearchName} onSubmit={onSearchNameSubmit}>
       <label htmlFor="name">
         <input
           id="name"
@@ -32,9 +33,6 @@ const SearchName = ({ setSearchTerm }) => {
 };
 
 SearchName.propTypes = {
-  currentPage: PropTypes.number.isRequired,
-  setCharacters: PropTypes.func.isRequired,
-  setLoading: PropTypes.func.isRequired,
   setSearchTerm: PropTypes.func.isRequired
 };
 

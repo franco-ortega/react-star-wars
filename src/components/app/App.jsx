@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getCharacters } from '../../services/getCharacters';
+// import { getCharacters } from '../../services/getCharacters';
 import Header from '../header/Header';
 import Loading from '../loading/Loading';
 import CharacterList from '../characters/CharacterList';
