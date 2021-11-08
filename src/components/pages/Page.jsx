@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Page.module.css';
 
 const Page = ({ pageNumber, setCurrentPage }) => {
 
@@ -9,7 +9,10 @@ const Page = ({ pageNumber, setCurrentPage }) => {
   };
 
   return (
-    <div onClick={onPageClick}>
+    <div
+      className={styles.Page}
+      onClick={onPageClick}
+    >
       {pageNumber}
     </div>
   );
