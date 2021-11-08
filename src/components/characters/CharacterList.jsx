@@ -14,9 +14,9 @@ const CharacterList = ({ characters }) => {
   ));
 
   return (
-    <main>
+    <ul>
       {charactersToDisplay}
-    </main>
+    </ul>
   );
 };
 
