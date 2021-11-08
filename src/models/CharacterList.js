@@ -26,4 +26,8 @@ export class CharacterList {
       return acc + Number(cur.height);
     }, 0) / this.characters.length;
   }
+
+  totalPages() {
+    return Math.ceil(this.count / 10);
+  }
 }
