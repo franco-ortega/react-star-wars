@@ -1,0 +1,18 @@
+.SearchName {
+  width: fit-content;
+  margin: auto;
+}
+
+.SearchName input {
+  font-size: 1.25rem;
+  padding: 0.25rem;
+}
+
+.SearchName > button {
+  background: lightgray;
+  border-radius: 0.25rem;
+  margin: 1rem 0.5rem;
+  padding: 0.25rem 0;
+  width: 5rem;
+  font-size: 1.25rem;
+}
