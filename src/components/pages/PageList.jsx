@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import Page from './Page';
+import PropTypes from 'prop-types';
+import styles from './PageList.module.css';
 
 const PageList = ({ totalPages, setCurrentPage }) => {
 
@@ -13,7 +13,7 @@ const PageList = ({ totalPages, setCurrentPage }) => {
   }
 
   return (
-    <div>
+    <div className={styles.PageList}>
       {pagesToDisplay}
     </div>
   );

@@ -1,0 +1,10 @@
+.PageList {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+
+  margin: auto;
+  width: fit-content;
+
+  /* border: thin solid white; */
+}
