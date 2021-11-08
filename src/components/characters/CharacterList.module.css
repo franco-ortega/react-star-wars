@@ -5,3 +5,11 @@
   align-items: center;
   gap: 1rem;
 }
+
+@media screen and (min-width: 500px) {
+  .CharacterList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
