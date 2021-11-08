@@ -6,7 +6,9 @@ import CharacterList from './CharacterList';
 import { CharacterList as CharListClass } from '../../models/CharacterList';
 
 const server = setupServer(
-  rest.get('https://swapi.dev/api/people/?page=1', (req, res, ctx) => {
+  rest.get('https://swapi.dev/api/people/', (req, res, ctx) => {
+    const query = req.url.searchParams;
+    const page = query.get("page=1")
     return res(ctx.json(mockApiData));
   })
 );
@@ -25,7 +27,7 @@ describe('CharacterList test', () => {
     );
 
     return waitFor(() => {
-      expect(screen.getByText('Luke Skywalker').toBeInTheDocument());
+      expect(screen.getByText('Luke Skywalker')).toBeInTheDocument();
     });
 
   });

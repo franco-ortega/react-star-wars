@@ -1,4 +1,4 @@
-import React from 'react';
+import Character from './Character';
 import PropTypes from 'prop-types';
 
 const CharacterList = ({ characters }) => {
