@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import SearchName from './SearchName';
 
 describe('SearchName component tests', () => {
   it('renders SearchName component', () => {
@@ -10,13 +11,13 @@ describe('SearchName component tests', () => {
       />
     );
 
-    const input = screen.getByPlaceholderText('Seach by name')
+    const input = screen.getByPlaceholderText('Seach by name');
 
     expect(input).toBeInTheDocument();
   });
 
   it('setSearchName called each time a character is typed in input', () => {
-    const setSearchName = jest.jfn();
+    const setSearchName = jest.fn();
 
     render(
       <SearchName
@@ -27,7 +28,7 @@ describe('SearchName component tests', () => {
 
     const input = screen.getByPlaceholderText('Seach by name');
 
-    const name = 'Luke'
+    const name = 'Luke';
 
     userEvent.type(input, name);
 
@@ -46,12 +47,12 @@ describe('SearchName component tests', () => {
     const input = screen.getByPlaceholderText('Seach by name');
     const button = screen.getByText('Search');
 
-    const name = 'Luke'
+    const name = 'Luke';
 
     userEvent.type(input, name);
 
     userEvent.click(button);
 
-    expect(input.nodeValue).toBeNull()
+    expect(input.nodeValue).toBeNull();
   });
 });
