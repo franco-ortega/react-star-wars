@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SearchName.module.css';
 
-const SearchName = ({ setSearchTerm, setCharacters, setCurrentPage }) => {
+const SearchName = ({ setSearchTerm, setCurrentPage }) => {
 
   const [searchName, setSearchName] = useState('');
 
@@ -17,9 +17,9 @@ const SearchName = ({ setSearchTerm, setCharacters, setCurrentPage }) => {
   };
 
   const onResetClick = () => {
+    setSearchName('');
     setSearchTerm('');
   };
-  
 
   return (
     <form className={styles.SearchName} onSubmit={onSearchNameSubmit}>

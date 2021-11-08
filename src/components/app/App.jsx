@@ -40,7 +40,6 @@ const App = () => {
       <Header />
       <SearchName
         setSearchTerm={setSearchTerm}
-        setCharacters={setCharacters}
         setCurrentPage={setCurrentPage}
       />
       {characters.count &&
