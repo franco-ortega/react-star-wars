@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     setLoading(true);
 
-    searchCharacters(searchTerm, currentPage)
+    searchCharacters(currentPage, searchTerm)
       .then(res => {
         setCharacters(res);
         setLoading(false);
@@ -40,15 +40,19 @@ const App = () => {
       <Header />
       <SearchName
         setSearchTerm={setSearchTerm}
+        setCharacters={setCharacters}
+        setCurrentPage={setCurrentPage}
       />
+      {characters.count &&
+      <PageList
+        totalPages={characters.totalPages()}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
+      }
       {loading && <Loading />}
       {characters.count && !loading &&
       <>
-        <PageList
-          totalPages={characters.totalPages()}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
         <CharacterList characters={characters.characters} />
         <Averages
           height={characters.averageHeight()}
