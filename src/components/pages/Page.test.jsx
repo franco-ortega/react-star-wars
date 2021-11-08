@@ -6,6 +6,7 @@ describe('Page test', () => {
     render(
       <Page
         pageNumber={1}
+        currentPage={1}
         setCurrentPage={() => {}}
       />
     );

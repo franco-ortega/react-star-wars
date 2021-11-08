@@ -7,7 +7,7 @@ const CharacterList = ({ characters }) => {
   const charactersToDisplay = characters.map((character, index) => (
     <Character
       key={index}
-      hue={index * 75}
+      hue={index * 35}
       name={character.name}
       gender={character.gender}
       hairColor={character.hairColor}

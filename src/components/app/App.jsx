@@ -1,64 +1,48 @@
-import React, { useEffect, useState } from 'react';
-// import { getCharacters } from '../../services/getCharacters';
 import Header from '../header/Header';
+import SearchName from '../search/SearchName';
+import PageList from '../pages/PageList';
 import Loading from '../loading/Loading';
 import CharacterList from '../characters/CharacterList';
 import Averages from '../averages/Averages';
-import PageList from '../pages/PageList';
-import SearchName from '../search/SearchName';
-import { searchCharacters } from '../../services/searchCharacters';
+import NoResults from '../characters/NoResults';
+import { useCharacters } from '../../hooks/useCharacters';
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [characters, setCharacters] = useState({
-    count: 0,
-    previous: '',
-    next: '',
-    characters: []
-  });
-
-  useEffect(() => {
-    setLoading(true);
-
-    searchCharacters(currentPage, searchTerm)
-      .then(res => {
-        setCharacters(res);
-        setLoading(false);
-      });
-
-    // getCharacters(currentPage)
-    //   .then(res => {
-    //     setCharacters(res);
-    //     setLoading(false);
-    //   });
-  }, [currentPage, searchTerm]);
+  const {
+    loading,
+    searchTerm,
+    setSearchTerm,
+    currentPage,
+    setCurrentPage,
+    characters
+  } = useCharacters();
 
   return (
     <div data-testid="app">
       <Header />
       <SearchName
+        searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        setCharacters={setCharacters}
         setCurrentPage={setCurrentPage}
       />
-      {characters.count &&
+      {characters.count > 0 &&
       <PageList
-        totalPages={characters.totalPages()}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        totalPages={characters.totalPages()}
       />
       }
-      {loading && <Loading />}
-      {characters.count && !loading &&
-      <>
-        <CharacterList characters={characters.characters} />
-        <Averages
-          height={characters.averageHeight()}
-          mass={characters.averageMass()}
-        />
-      </>
+      {loading 
+        ? <Loading />
+        : characters.count 
+          ? <>
+            <CharacterList characters={characters.characters} />
+            <Averages
+              height={characters.averageHeight()}
+              mass={characters.averageMass()}
+            />
+          </>
+          : <NoResults />
       }
     </div>
   );

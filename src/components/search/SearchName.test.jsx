@@ -6,8 +6,8 @@ describe('SearchName component tests', () => {
   it('renders SearchName component', () => {
     render(
       <SearchName
+      searchTerm={''}
       setSearchTerm={() => {}}
-      setCharacters={() => {}}
       setCurrentPage={() => {}}
       />
     );
@@ -22,14 +22,16 @@ describe('SearchName component tests', () => {
 
     render(
       <SearchName
+      searchTerm={''}
         setSearchTerm={setSearchTerm}
-        setCharacters={() => {}}
         setCurrentPage={() => {}}
       />
     );
 
     const button = screen.getByText('Search');
+    const input = screen.getByPlaceholderText('Search by name');
 
+    userEvent.type(input, 'Luke');
     userEvent.click(button);
 
     expect(setSearchTerm).toHaveBeenCalled();

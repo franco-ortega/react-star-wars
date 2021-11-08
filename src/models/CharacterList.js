@@ -1,9 +1,7 @@
 export class CharacterList {
 
-  constructor({ count, next, previous, results }) {
+  constructor({ count, results }) {
     this.count = count;
-    this.next = next;
-    this.previous = previous;
     this.characters = results
       .map(character => {
         return {
@@ -25,52 +23,59 @@ export class CharacterList {
       });
   }
 
-  averageMass() {
-    let totalCharacters = this.characters.length;
+  allMasses() {
+    return this.characters.map(character => character.mass);
+  }
 
-    const average = this.characters.reduce((acc, cur) => {
-      // If the mass has a comma, remove the comma
-      if(cur.mass.includes(',')) {
-        const commaRemoved = cur.mass.split(',').join('');
+  allHeights() {
+    return this.characters.map(character => character.height);
+  }
 
-        // If the mass converted to a number is not NaN, add it to the total
-        if(!isNaN(Number(commaRemoved))) {
-          return acc + Number(commaRemoved)
-        }
+  calculateAverage(values) {
+    let totalCharacters = values.length;
 
-        // Otherwise, decrement the totalCharacters and only return the previous total
+    const average = values.reduce((acc, cur) => {
+      // If the value has a comma, remove the comma
+      if(cur.includes(',')) {
+        const commaRemoved = cur.split(',').join('');
+
+        // If the value converted to a number is not NaN, add it to the total
+        if(!isNaN(Number(commaRemoved))) return acc + Number(commaRemoved);
+
+        // Otherwise, decrement totalCharacters and return previous total
         totalCharacters--;
         return acc;
       }
 
-      if(isNaN(Number(cur.mass))) {
+      // If the value converted to a number is NaN, decrement totalCharacters
+      // and return previous total
+      if(isNaN(Number(cur))) {
         totalCharacters--;
         return acc;
       }
 
-      return acc + Number(cur.mass);
+      // Otherwise, add the current value to the previous total
+      return acc + Number(cur);
     }, 0) / totalCharacters;
 
-    // Check if there is a decimal
+    // Check if the average has a decimal
     if(String(average).includes('.')) {
-      // If the decimal is longer than 2 decimal places, return only 2 decimal places
-      if(String(average).split('.')[1].length > 2) return Number(average.toFixed(2));
+      // If the decimal is longer than 2 places, return only 2 decimal places
+      if(String(average).split('.')[1].length > 2) {
+        return Number(average.toFixed(2));
+      }
     }
 
+    // Otherwise, return the entire average
     return average;
   }
 
+  averageMass() {
+    return this.calculateAverage(this.allMasses());
+  }
+
   averageHeight() {
-    let totalCharacters = this.characters.length;
-
-    return this.characters.reduce((acc, cur) => {
-      if(isNaN(Number(cur.height))) {
-        totalCharacters--;
-        return acc;
-      }
-
-      return acc + Number(cur.height);
-    }, 0) / totalCharacters;
+    return this.calculateAverage(this.allHeights());
   }
 
   totalPages() {
