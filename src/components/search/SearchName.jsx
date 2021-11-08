@@ -40,7 +40,6 @@ const SearchName = ({ setSearchTerm, setCurrentPage }) => {
 
 SearchName.propTypes = {
   setSearchTerm: PropTypes.func.isRequired,
-  setCharacters: PropTypes.func.isRequired,
   setCurrentPage: PropTypes.func.isRequired
 };
 

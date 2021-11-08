@@ -24,6 +24,9 @@ const App = () => {
 
     searchCharacters(currentPage, searchTerm)
       .then(res => {
+
+        console.log('RES:');
+        console.log(res);
         setCharacters(res);
         setLoading(false);
       });

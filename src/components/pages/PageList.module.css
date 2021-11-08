@@ -1,13 +1,8 @@
 .PageList {
-  /* display: flex;
-  justify-content: space-evenly;
-  gap: 1rem; */
-
-  margin: 1rem auto;
   width: fit-content;
-  text-align: center;
+  margin: 1rem auto;
 
-  /* border: thin solid white; */
+  text-align: center;
 }
 
 .PageList ul {
@@ -17,16 +12,15 @@
 }
 
 .PageList p > button {
-  background: lightgray;
-  border-radius: 0.25rem;
-  margin: 1rem 0.5rem;
-  padding: 0.25rem 0;
-  width: 5rem;
-  font-size: 1rem;
-
   background: black;
   border-color: yellow;
+  border-radius: 0.25rem;
+  width: 5rem;
+  margin: 1rem 0.5rem;
+  padding: 0.25rem 0;
+
   color: yellow;
+  font-size: 1rem;
 }
 
 .PageList p > button:disabled {

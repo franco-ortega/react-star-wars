@@ -4,7 +4,6 @@ import styles from './Page.module.css';
 const Page = ({ pageNumber, currentPage, setCurrentPage }) => {
 
   const onPageClick = () => {
-    console.log(`Page ${pageNumber} clicked.`);
     setCurrentPage(pageNumber);
   };
 
