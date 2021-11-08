@@ -37,7 +37,6 @@ Character.propTypes = {
   hairColor: PropTypes.string.isRequired,
   mass: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired
-
 };
 
 export default Character;

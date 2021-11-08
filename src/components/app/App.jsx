@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-
 import { getCharacters } from '../../services/getCharacters';
-import CharacterList from '../characters/CharacterList';
 import Header from '../header/Header';
 import Loading from '../loading/Loading';
+import CharacterList from '../characters/CharacterList';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [characters, setCharacters] = useState({
     count: 0,
-    previous: null,
-    next: 'null',
+    previous: '',
+    next: '',
     characters: []
   });
 
