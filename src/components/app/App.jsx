@@ -18,7 +18,6 @@ const App = () => {
 
     getCharacters(1)
       .then(res => {
-        console.log(res);
         setCharacters(res);
         setLoading(false);
       });
