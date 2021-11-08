@@ -1,0 +1,9 @@
+.Header {
+  margin: auto;
+  margin-top: 1rem;
+
+  color: yellow;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+body {
+  background: black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'Star Jedi';
+  src: url(./fonts/star_jedi/starjedi/Starjedi.ttf);
+}
