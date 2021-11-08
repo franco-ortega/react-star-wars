@@ -6,6 +6,7 @@ describe('PageList test', () => {
     render(
       <PageList
         totalPages={10}
+        currentPage={1}
         setCurrentPage={() => {}}
       />
     );
