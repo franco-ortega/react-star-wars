@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import styles from './Character.module.css';
 
 const Character = ({
   name,
@@ -8,7 +9,7 @@ const Character = ({
   height
 }) => {
   return (
-    <li>
+    <li className={styles.Character}>
       <h3>{name}</h3>
       <p>Gender: {gender}</p>
       <p>Hair Color: {hairColor}</p>
