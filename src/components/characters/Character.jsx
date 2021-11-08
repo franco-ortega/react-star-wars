@@ -9,8 +9,18 @@ const Character = ({
   mass,
   height
 }) => {
+  const bkgdGradient = {
+    background: `linear-gradient(
+      ${hue}deg,
+      hsl(${hue}, 50%, 20%),
+      hsl(${hue}, 70%, 30%),
+      hsl(${hue}, 90%, 40%)
+    )`,
+    backgroundBlendMode: 'soft-light'
+  };
+
   return (
-    <li className={styles.Character} style={{ background: `hsl(${hue}, 50%, 40%)` }}>
+    <li className={styles.Character} style={bkgdGradient}>
       <h3>{name}</h3>
       <p>Gender: {gender}</p>
       <p>Hair Color: {hairColor}</p>
