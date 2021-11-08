@@ -26,6 +26,7 @@ const SearchName = ({ setSearchTerm, setCurrentPage, searchTerm }) => {
     <form className={styles.SearchName} onSubmit={onSearchNameSubmit}>
       <label htmlFor="name">
         <input
+        required
           id="name"
           type="text"
           placeholder="Search by name"

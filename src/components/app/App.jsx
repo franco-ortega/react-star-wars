@@ -7,8 +7,6 @@ import Averages from '../averages/Averages';
 import NoResults from '../characters/NoResults';
 import { useCharacters } from '../../hooks/useCharacters';
 
-import React from 'react';
-
 const App = () => {
   const {
     loading,
