@@ -20,4 +20,10 @@ export class CharacterList {
       return acc + Number(cur.mass);
     }, 0) / this.characters.length;
   }
+
+  averageHeight() {
+    return this.characters.reduce((acc, cur) => {
+      return acc + Number(cur.height);
+    }, 0) / this.characters.length;
+  }
 }
